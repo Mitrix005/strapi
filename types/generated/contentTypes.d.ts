@@ -373,6 +373,71 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiKadraKadra extends Struct.CollectionTypeSchema {
+  collectionName: 'kadras';
+  info: {
+    displayName: 'Kadra';
+    pluralName: 'kadras';
+    singularName: 'kadra';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Funkcja: Schema.Attribute.Enumeration<
+      [
+        'Dyrektor',
+        'Wicedyrektor',
+        'Nauczyciel',
+        'Pedagog specjalny',
+        'Pedagog szkolny',
+        'Psycholog szkolny',
+        'Biblioteka',
+      ]
+    >;
+    ImieNazwisko: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::kadra.kadra'> &
+      Schema.Attribute.Private;
+    Przedmiot: Schema.Attribute.Enumeration<
+      [
+        'Biologia',
+        'Biznes i zarz\u0105dzanie',
+        'Chemia',
+        'Doradztwo zawodowe',
+        'Edukacja dla bezpiecze\u0144stwa',
+        'Edukacja obywatelska',
+        'Edukacja zdrowotna',
+        'Filozofia',
+        'Fizyka',
+        'Geografia',
+        'Historia',
+        'Informatyka',
+        'J\u0119zyk angielski',
+        'J\u0119zyk francuski',
+        'J\u0119zyk hiszpa\u0144ski',
+        'J\u0119zyk \u0142aci\u0144ski',
+        'J\u0119zyk niemiecki',
+        'J\u0119zyk polski',
+        'J\u0119zyk rosyjski',
+        'Matematyka',
+        'Muzyka',
+        'Religia',
+        'Wiedza o spo\u0142ecze\u0144stwie',
+        'Wychowanie fizyczne',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Zdjecie: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
@@ -917,6 +982,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::kadra.kadra': ApiKadraKadra;
       'api::post.post': ApiPostPost;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
