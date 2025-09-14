@@ -7,6 +7,6 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
-  url: env('URL'),
+  url: env('PUBLIC_URL'),
   proxy: true
 });
