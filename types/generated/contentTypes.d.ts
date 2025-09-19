@@ -373,6 +373,41 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiArchiwumDyrekcjaArchiwumDyrekcja
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'archiwum_dyrekcjas';
+  info: {
+    displayName: 'archiwum-dyrekcja';
+    pluralName: 'archiwum-dyrekcjas';
+    singularName: 'archiwum-dyrekcja';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ImieNazwisko: Schema.Attribute.String & Schema.Attribute.Required;
+    Koniec: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::archiwum-dyrekcja.archiwum-dyrekcja'
+    > &
+      Schema.Attribute.Private;
+    Poczatek: Schema.Attribute.Date & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ZdjecieProfile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface ApiKadraKadra extends Struct.CollectionTypeSchema {
   collectionName: 'kadras';
   info: {
@@ -982,6 +1017,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::archiwum-dyrekcja.archiwum-dyrekcja': ApiArchiwumDyrekcjaArchiwumDyrekcja;
       'api::kadra.kadra': ApiKadraKadra;
       'api::post.post': ApiPostPost;
       'plugin::content-releases.release': PluginContentReleasesRelease;
