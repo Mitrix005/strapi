@@ -466,6 +466,7 @@ export interface ApiKadraKadra extends Struct.CollectionTypeSchema {
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
+    Tytul: Schema.Attribute.Enumeration<['mgr', 'dr', 'ks.']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

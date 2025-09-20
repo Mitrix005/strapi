@@ -64,6 +64,14 @@
         "videos",
         "audios"
       ]
+    },
+    "Tytul": {
+      "type": "enumeration",
+      "enum": [
+        "mgr",
+        "dr",
+        "ks."
+      ]
     }
   }
 }
