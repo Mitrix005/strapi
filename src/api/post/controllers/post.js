@@ -30,9 +30,9 @@ module.exports = createCoreController('api::post.post', ({ strapi }) => ({
           ...queryWithoutSearch.filters,
           $or: [
             // Dostosuj pola według potrzeb
-            { title: { $containsi: searchTerm } },
-            { content: { $containsi: searchTerm } },
-            { description: { $containsi: searchTerm } },
+            { Tytul: { $containsi: searchTerm } },
+            { Opis: { $containsi: searchTerm } },
+            { Autor: { $containsi: searchTerm } },
             // Możesz dodać więcej pól do wyszukiwania
           ]
         }
