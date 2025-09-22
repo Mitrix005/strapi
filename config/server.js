@@ -1,8 +1,12 @@
 module.exports = ({ env }) => ({
-  connection: {
-    client: 'postgres',
-    connection: env('DATABASE_URL'),
-    debug: true,
-    pool: { min: 0, max: 7 },
+  host: env('HOST', '0.0.0.0'),
+  port: env.int('PORT', 1337),
+  app: {
+    keys: env.array('APP_KEYS'),
   },
+  webhooks: {
+    populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
+  },
+  url: env('URL'),
+  proxy: true
 });
