@@ -4,7 +4,7 @@
   "info": {
     "singularName": "archiwum-dyrekcja",
     "pluralName": "archiwum-dyrekcjas",
-    "displayName": "archiwum-dyrekcja"
+    "displayName": "Archiwum dyrekcja"
   },
   "options": {
     "draftAndPublish": true

@@ -377,7 +377,7 @@ export interface ApiArchiwumDyrekcjaArchiwumDyrekcja
   extends Struct.CollectionTypeSchema {
   collectionName: 'archiwum_dyrekcjas';
   info: {
-    displayName: 'archiwum-dyrekcja';
+    displayName: 'Archiwum dyrekcja';
     pluralName: 'archiwum-dyrekcjas';
     singularName: 'archiwum-dyrekcja';
   };
@@ -474,6 +474,132 @@ export interface ApiKadraKadra extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMenuAktualnosciMenuAktualnosci
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'menu_aktualnoscis';
+  info: {
+    displayName: 'Menu - Aktualno\u015Bci';
+    pluralName: 'menu-aktualnoscis';
+    singularName: 'menu-aktualnosci';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::menu-aktualnosci.menu-aktualnosci'
+    > &
+      Schema.Attribute.Private;
+    Opis: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
+    Tytul: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMenuDokumentyMenuDokumenty
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'menu_dokumenties';
+  info: {
+    displayName: 'Menu - Dokumenty';
+    pluralName: 'menu-dokumenties';
+    singularName: 'menu-dokumenty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::menu-dokumenty.menu-dokumenty'
+    > &
+      Schema.Attribute.Private;
+    Opis: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
+    Tytul: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMenuSzkolaMenuSzkola extends Struct.CollectionTypeSchema {
+  collectionName: 'menu_szkolas';
+  info: {
+    displayName: 'Menu - Szko\u0142a';
+    pluralName: 'menu-szkolas';
+    singularName: 'menu-szkola';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::menu-szkola.menu-szkola'
+    > &
+      Schema.Attribute.Private;
+    Opis: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
+    Tytul: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMenuUczenMenuUczen extends Struct.CollectionTypeSchema {
+  collectionName: 'menu_uczens';
+  info: {
+    displayName: 'Menu - Ucze\u0144';
+    pluralName: 'menu-uczens';
+    singularName: 'menu-uczen';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::menu-uczen.menu-uczen'
+    > &
+      Schema.Attribute.Private;
+    Opis: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
+    Tytul: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
@@ -506,37 +632,6 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     ZdjecieProfile: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-  };
-}
-
-export interface ApiTestTest extends Struct.CollectionTypeSchema {
-  collectionName: 'tests';
-  info: {
-    displayName: 'Test';
-    pluralName: 'tests';
-    singularName: 'test';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::test.test'> &
-      Schema.Attribute.Private;
-    Opis: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'defaultMarkdown';
-        }
-      >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -1051,8 +1146,11 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::archiwum-dyrekcja.archiwum-dyrekcja': ApiArchiwumDyrekcjaArchiwumDyrekcja;
       'api::kadra.kadra': ApiKadraKadra;
+      'api::menu-aktualnosci.menu-aktualnosci': ApiMenuAktualnosciMenuAktualnosci;
+      'api::menu-dokumenty.menu-dokumenty': ApiMenuDokumentyMenuDokumenty;
+      'api::menu-szkola.menu-szkola': ApiMenuSzkolaMenuSzkola;
+      'api::menu-uczen.menu-uczen': ApiMenuUczenMenuUczen;
       'api::post.post': ApiPostPost;
-      'api::test.test': ApiTestTest;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
