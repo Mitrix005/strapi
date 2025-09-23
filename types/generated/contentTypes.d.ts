@@ -408,6 +408,35 @@ export interface ApiArchiwumDyrekcjaArchiwumDyrekcja
   };
 }
 
+export interface ApiBibliotekaBiblioteka extends Struct.SingleTypeSchema {
+  collectionName: 'bibliotekas';
+  info: {
+    displayName: 'Biblioteka';
+    pluralName: 'bibliotekas';
+    singularName: 'biblioteka';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::biblioteka.biblioteka'
+    > &
+      Schema.Attribute.Private;
+    Opis: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    Tytul: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiKadraKadra extends Struct.CollectionTypeSchema {
   collectionName: 'kadras';
   info: {
@@ -593,6 +622,7 @@ export interface ApiMenuUczenMenuUczen extends Struct.CollectionTypeSchema {
     Opis: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
+    Template: Schema.Attribute.Enumeration<['Main', 'Post']>;
     Tytul: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1145,6 +1175,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::archiwum-dyrekcja.archiwum-dyrekcja': ApiArchiwumDyrekcjaArchiwumDyrekcja;
+      'api::biblioteka.biblioteka': ApiBibliotekaBiblioteka;
       'api::kadra.kadra': ApiKadraKadra;
       'api::menu-aktualnosci.menu-aktualnosci': ApiMenuAktualnosciMenuAktualnosci;
       'api::menu-dokumenty.menu-dokumenty': ApiMenuDokumentyMenuDokumenty;

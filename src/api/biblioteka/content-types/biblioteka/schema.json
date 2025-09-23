@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "bibliotekas",
+  "info": {
+    "singularName": "biblioteka",
+    "pluralName": "bibliotekas",
+    "displayName": "Biblioteka"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Tytul": {
+      "type": "string"
+    },
+    "Opis": {
+      "type": "text"
+    }
+  }
+}
