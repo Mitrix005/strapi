@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_link_paragraf_links",
+  "info": {
+    "displayName": "Paragraf + Link"
+  },
+  "options": {},
+  "attributes": {
+    "Tytul": {
+      "type": "text"
+    },
+    "Linki": {
+      "type": "component",
+      "component": "link.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

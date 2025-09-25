@@ -722,7 +722,6 @@ export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilakty
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Linki: Schema.Attribute.Component<'link.link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -731,6 +730,7 @@ export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilakty
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Sekcje: Schema.Attribute.Component<'link.paragraf-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
