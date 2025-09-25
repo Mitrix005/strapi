@@ -6,7 +6,11 @@
   "options": {},
   "attributes": {
     "Paragraf": {
-      "type": "text"
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultMarkdown"
+      }
     }
   },
   "config": {}

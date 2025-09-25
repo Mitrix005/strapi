@@ -18,7 +18,13 @@ export interface DomyslnyParagraf extends Struct.ComponentSchema {
     displayName: 'Paragraf';
   };
   attributes: {
-    Paragraf: Schema.Attribute.Text;
+    Paragraf: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
   };
 }
 
