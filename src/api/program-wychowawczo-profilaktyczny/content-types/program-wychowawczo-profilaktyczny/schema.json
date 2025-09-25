@@ -14,9 +14,9 @@
     "Naglowek": {
       "type": "string"
     },
-    "Sekcje": {
+    "Linki": {
       "type": "component",
-      "component": "link.paragraf-link",
+      "component": "link.link",
       "repeatable": true
     }
   }
