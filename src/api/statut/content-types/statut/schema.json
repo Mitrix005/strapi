@@ -26,6 +26,11 @@
         "videos",
         "audios"
       ]
+    },
+    "Linki": {
+      "type": "component",
+      "component": "link.link",
+      "repeatable": true
     }
   }
 }

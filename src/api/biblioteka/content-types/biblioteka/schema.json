@@ -16,6 +16,13 @@
     },
     "Opis": {
       "type": "text"
+    },
+    "Edytor": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     }
   }
 }
