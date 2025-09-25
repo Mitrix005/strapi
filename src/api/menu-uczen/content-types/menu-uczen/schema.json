@@ -29,6 +29,10 @@
         "Main",
         "Post"
       ]
+    },
+    "singleTypeUid": {
+      "type": "uid",
+      "targetField": "Link"
     }
   }
 }

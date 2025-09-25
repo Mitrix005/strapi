@@ -786,6 +786,8 @@ export interface ApiMenuAktualnosciMenuAktualnosci
     Opis: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
+    singleTypeUid: Schema.Attribute.UID<'Link'>;
+    Template: Schema.Attribute.Enumeration<['Main', 'Same linki']>;
     Tytul: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -851,6 +853,8 @@ export interface ApiMenuSzkolaMenuSzkola extends Struct.CollectionTypeSchema {
     Opis: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
+    singleTypeUid: Schema.Attribute.UID<'Link'>;
+    Template: Schema.Attribute.Enumeration<['Main', 'Same linki']>;
     Tytul: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -882,6 +886,7 @@ export interface ApiMenuUczenMenuUczen extends Struct.CollectionTypeSchema {
     Opis: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
+    singleTypeUid: Schema.Attribute.UID<'Link'>;
     Template: Schema.Attribute.Enumeration<['Main', 'Post']>;
     Tytul: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
