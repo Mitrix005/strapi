@@ -696,8 +696,8 @@ export interface ApiProceduryIWnioskiProceduryIWnioski
     > &
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
-    Paragraf: Schema.Attribute.Component<'link.paragraf-link', true>;
     publishedAt: Schema.Attribute.DateTime;
+    Sekcja: Schema.Attribute.Component<'domyslny.paragraf-link-obraz', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -719,7 +719,6 @@ export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilakty
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Linki: Schema.Attribute.Component<'link.link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -728,6 +727,7 @@ export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilakty
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Sekcja: Schema.Attribute.Component<'domyslny.paragraf-link-obraz', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -748,7 +748,6 @@ export interface ApiStatutStatut extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Linki: Schema.Attribute.Component<'link.link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -757,6 +756,7 @@ export interface ApiStatutStatut extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Sekcja: Schema.Attribute.Component<'domyslny.paragraf-link-obraz', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

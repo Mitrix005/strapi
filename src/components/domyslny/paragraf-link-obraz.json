@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_domyslny_paragraf_link_obrazs",
+  "info": {
+    "displayName": "Paragraf + Link + Obraz"
+  },
+  "options": {},
+  "attributes": {
+    "Paragraf": {
+      "type": "component",
+      "component": "domyslny.paragraf",
+      "repeatable": true
+    },
+    "Linki": {
+      "type": "component",
+      "component": "domyslny.link",
+      "repeatable": true
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "IloscKolumn": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

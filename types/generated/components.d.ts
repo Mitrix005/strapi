@@ -1,36 +1,44 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface LinkLink extends Struct.ComponentSchema {
-  collectionName: 'components_link_links';
+export interface DomyslnyLink extends Struct.ComponentSchema {
+  collectionName: 'components_domyslny_links';
   info: {
     displayName: 'Link';
     icon: 'link';
   };
+  attributes: {};
+}
+
+export interface DomyslnyParagraf extends Struct.ComponentSchema {
+  collectionName: 'components_domyslny_paragrafs';
+  info: {
+    displayName: 'Paragraf';
+  };
+  attributes: {};
+}
+
+export interface DomyslnyParagrafLinkObraz extends Struct.ComponentSchema {
+  collectionName: 'components_domyslny_paragraf_link_obrazs';
+  info: {
+    displayName: 'Paragraf + Link + Obraz';
+  };
   attributes: {
+    IloscKolumn: Schema.Attribute.Integer;
+    Linki: Schema.Attribute.Component<'domyslny.link', true>;
     Media: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    NazwaLinku: Schema.Attribute.String;
-  };
-}
-
-export interface LinkParagrafLink extends Struct.ComponentSchema {
-  collectionName: 'components_link_paragraf_links';
-  info: {
-    displayName: 'Paragraf + Link';
-  };
-  attributes: {
-    Linki: Schema.Attribute.Component<'link.link', true>;
-    Paragraf: Schema.Attribute.Text;
+    Paragraf: Schema.Attribute.Component<'domyslny.paragraf', true>;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'link.link': LinkLink;
-      'link.paragraf-link': LinkParagrafLink;
+      'domyslny.link': DomyslnyLink;
+      'domyslny.paragraf': DomyslnyParagraf;
+      'domyslny.paragraf-link-obraz': DomyslnyParagrafLinkObraz;
     }
   }
 }
