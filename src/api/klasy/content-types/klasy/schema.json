@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "klasies",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "klasy",
+    "pluralName": "klasies",
+    "displayName": "Klasy"
   },
   "options": {
     "draftAndPublish": true

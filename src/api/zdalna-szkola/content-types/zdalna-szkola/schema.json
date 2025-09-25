@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "zdalna_szkolas",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "zdalna-szkola",
+    "pluralName": "zdalna-szkolas",
+    "displayName": "Zdalna szkoła"
   },
   "options": {
     "draftAndPublish": true

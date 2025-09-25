@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "deklaracja_dostepnoscis",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "deklaracja-dostepnosci",
+    "pluralName": "deklaracja-dostepnoscis",
+    "displayName": "Deklaracja dostępności"
   },
   "options": {
     "draftAndPublish": true

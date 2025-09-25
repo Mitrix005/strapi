@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "samorzads",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "samorzad",
+    "pluralName": "samorzads",
+    "displayName": "Samorząd"
   },
   "options": {
     "draftAndPublish": true

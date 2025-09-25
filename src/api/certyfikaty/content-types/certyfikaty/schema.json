@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "certyfikaties",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "certyfikaty",
+    "pluralName": "certyfikaties",
+    "displayName": "Certyfikaty"
   },
   "options": {
     "draftAndPublish": true

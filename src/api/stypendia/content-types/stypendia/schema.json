@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "stypendias",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "stypendia",
+    "pluralName": "stypendias",
+    "displayName": "Stypendia"
   },
   "options": {
     "draftAndPublish": true

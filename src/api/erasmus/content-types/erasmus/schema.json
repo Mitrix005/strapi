@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "erasmuses",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "erasmus",
+    "pluralName": "erasmuses",
+    "displayName": "Erasmus+"
   },
   "options": {
     "draftAndPublish": true

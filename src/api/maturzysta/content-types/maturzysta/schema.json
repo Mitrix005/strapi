@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "maturzystas",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "maturzysta",
+    "pluralName": "maturzystas",
+    "displayName": "Maturzysta"
   },
   "options": {
     "draftAndPublish": true

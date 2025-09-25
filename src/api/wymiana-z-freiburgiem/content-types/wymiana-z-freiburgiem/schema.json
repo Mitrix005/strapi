@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "wymiana_z_freiburgiems",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "wymiana-z-freiburgiem",
+    "pluralName": "wymiana-z-freiburgiems",
+    "displayName": "Wymiana z Freiburgiem"
   },
   "options": {
     "draftAndPublish": true

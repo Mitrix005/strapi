@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "podrecznikis",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "podreczniki",
+    "pluralName": "podrecznikis",
+    "displayName": "Podręczniki"
   },
   "options": {
     "draftAndPublish": true

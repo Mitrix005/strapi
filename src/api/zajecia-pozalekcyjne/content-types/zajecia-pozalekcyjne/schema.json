@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "zajecia_pozalekcyjnes",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "zajecia-pozalekcyjne",
+    "pluralName": "zajecia-pozalekcyjnes",
+    "displayName": "Zajęcia pozalekcyjne"
   },
   "options": {
     "draftAndPublish": true

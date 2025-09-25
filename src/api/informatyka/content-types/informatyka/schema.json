@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "informatykas",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "informatyka",
+    "pluralName": "informatykas",
+    "displayName": "Informatyka"
   },
   "options": {
     "draftAndPublish": true

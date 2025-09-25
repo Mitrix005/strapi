@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "wspolpracas",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "wspolpraca",
+    "pluralName": "wspolpracas",
+    "displayName": "Współpraca"
   },
   "options": {
     "draftAndPublish": true

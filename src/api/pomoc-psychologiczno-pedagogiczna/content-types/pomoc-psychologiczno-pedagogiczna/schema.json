@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "pomoc_psychologiczno_pedagogicznas",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "pomoc-psychologiczno-pedagogiczna",
+    "pluralName": "pomoc-psychologiczno-pedagogicznas",
+    "displayName": "Pomoc psychologiczno-pedagogiczna"
   },
   "options": {
     "draftAndPublish": true

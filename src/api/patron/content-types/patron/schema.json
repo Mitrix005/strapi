@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bibliotekas",
+  "collectionName": "patrons",
   "info": {
-    "singularName": "biblioteka",
-    "pluralName": "bibliotekas",
-    "displayName": "Biblioteka"
+    "singularName": "patron",
+    "pluralName": "patrons",
+    "displayName": "Patron"
   },
   "options": {
     "draftAndPublish": true
