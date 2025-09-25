@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "statuts",
+  "collectionName": "program_wychowawczo_profilaktycznies",
   "info": {
-    "singularName": "statut",
-    "pluralName": "statuts",
-    "displayName": "Statut"
+    "singularName": "program-wychowawczo-profilaktyczny",
+    "pluralName": "program-wychowawczo-profilaktycznies",
+    "displayName": "Program Wychowawczo Profilaktyczny"
   },
   "options": {
     "draftAndPublish": true

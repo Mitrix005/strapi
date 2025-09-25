@@ -674,6 +674,36 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilaktyczny
+  extends Struct.SingleTypeSchema {
+  collectionName: 'program_wychowawczo_profilaktycznies';
+  info: {
+    displayName: 'Program Wychowawczo Profilaktyczny';
+    pluralName: 'program-wychowawczo-profilaktycznies';
+    singularName: 'program-wychowawczo-profilaktyczny';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Linki: Schema.Attribute.Component<'link.link', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::program-wychowawczo-profilaktyczny.program-wychowawczo-profilaktyczny'
+    > &
+      Schema.Attribute.Private;
+    Naglowek: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStatutStatut extends Struct.SingleTypeSchema {
   collectionName: 'statuts';
   info: {
@@ -696,8 +726,6 @@ export interface ApiStatutStatut extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
-    NazwaLinku: Schema.Attribute.String;
-    Plik: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1375,6 +1403,7 @@ declare module '@strapi/strapi' {
       'api::menu-szkola.menu-szkola': ApiMenuSzkolaMenuSzkola;
       'api::menu-uczen.menu-uczen': ApiMenuUczenMenuUczen;
       'api::post.post': ApiPostPost;
+      'api::program-wychowawczo-profilaktyczny.program-wychowawczo-profilaktyczny': ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilaktyczny;
       'api::statut.statut': ApiStatutStatut;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
