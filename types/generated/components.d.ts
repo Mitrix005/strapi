@@ -22,7 +22,7 @@ export interface LinkParagrafLink extends Struct.ComponentSchema {
   };
   attributes: {
     Linki: Schema.Attribute.Component<'link.link', true>;
-    Tytul: Schema.Attribute.Text;
+    Paragraf: Schema.Attribute.Text;
   };
 }
 

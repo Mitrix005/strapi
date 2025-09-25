@@ -696,8 +696,8 @@ export interface ApiProceduryIWnioskiProceduryIWnioski
     > &
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
+    Paragraf: Schema.Attribute.Component<'link.paragraf-link', true>;
     publishedAt: Schema.Attribute.DateTime;
-    Sekcja: Schema.Attribute.Component<'link.paragraf-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
