@@ -5,6 +5,20 @@
     "icon": "link"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "NazwaLinku": {
+      "type": "string"
+    },
+    "Plik": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
   "config": {}
 }

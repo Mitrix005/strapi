@@ -4,6 +4,10 @@
     "displayName": "Paragraf"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "Paragraf": {
+      "type": "text"
+    }
+  },
   "config": {}
 }

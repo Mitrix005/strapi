@@ -6,7 +6,10 @@ export interface DomyslnyLink extends Struct.ComponentSchema {
     displayName: 'Link';
     icon: 'link';
   };
-  attributes: {};
+  attributes: {
+    NazwaLinku: Schema.Attribute.String;
+    Plik: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
 }
 
 export interface DomyslnyParagraf extends Struct.ComponentSchema {
@@ -14,7 +17,9 @@ export interface DomyslnyParagraf extends Struct.ComponentSchema {
   info: {
     displayName: 'Paragraf';
   };
-  attributes: {};
+  attributes: {
+    Paragraf: Schema.Attribute.Text;
+  };
 }
 
 export interface DomyslnyParagrafLinkObraz extends Struct.ComponentSchema {
