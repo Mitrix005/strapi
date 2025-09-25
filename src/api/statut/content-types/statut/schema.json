@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "statuts",
+  "info": {
+    "singularName": "statut",
+    "pluralName": "statuts",
+    "displayName": "Statut"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Naglowek": {
+      "type": "string"
+    },
+    "Opis": {
+      "type": "string"
+    },
+    "Plik": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

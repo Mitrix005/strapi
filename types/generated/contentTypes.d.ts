@@ -665,6 +665,36 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStatutStatut extends Struct.SingleTypeSchema {
+  collectionName: 'statuts';
+  info: {
+    displayName: 'Statut';
+    pluralName: 'statuts';
+    singularName: 'statut';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::statut.statut'
+    > &
+      Schema.Attribute.Private;
+    Naglowek: Schema.Attribute.String;
+    Opis: Schema.Attribute.String;
+    Plik: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1182,6 +1212,7 @@ declare module '@strapi/strapi' {
       'api::menu-szkola.menu-szkola': ApiMenuSzkolaMenuSzkola;
       'api::menu-uczen.menu-uczen': ApiMenuUczenMenuUczen;
       'api::post.post': ApiPostPost;
+      'api::statut.statut': ApiStatutStatut;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
