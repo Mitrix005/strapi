@@ -674,6 +674,39 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProceduryIWnioskiProceduryIWnioski
+  extends Struct.SingleTypeSchema {
+  collectionName: 'procedury_i_wnioskis';
+  info: {
+    displayName: 'Procedury i wnioski';
+    pluralName: 'procedury-i-wnioskis';
+    singularName: 'procedury-i-wnioski';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::procedury-i-wnioski.procedury-i-wnioski'
+    > &
+      Schema.Attribute.Private;
+    Naglowek: Schema.Attribute.String;
+    Procedury: Schema.Attribute.Component<'link.link', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    Tytul1: Schema.Attribute.String;
+    Tytul2: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Wnioski: Schema.Attribute.Component<'link.link', true>;
+  };
+}
+
 export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilaktyczny
   extends Struct.SingleTypeSchema {
   collectionName: 'program_wychowawczo_profilaktycznies';
@@ -1403,6 +1436,7 @@ declare module '@strapi/strapi' {
       'api::menu-szkola.menu-szkola': ApiMenuSzkolaMenuSzkola;
       'api::menu-uczen.menu-uczen': ApiMenuUczenMenuUczen;
       'api::post.post': ApiPostPost;
+      'api::procedury-i-wnioski.procedury-i-wnioski': ApiProceduryIWnioskiProceduryIWnioski;
       'api::program-wychowawczo-profilaktyczny.program-wychowawczo-profilaktyczny': ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilaktyczny;
       'api::statut.statut': ApiStatutStatut;
       'plugin::content-releases.release': PluginContentReleasesRelease;
