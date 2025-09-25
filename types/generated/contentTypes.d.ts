@@ -560,6 +560,8 @@ export interface ApiMenuDokumentyMenuDokumenty
     Opis: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
+    singleTypeUid: Schema.Attribute.UID<'Link'>;
+    Template: Schema.Attribute.Enumeration<['Same linki', 'Inne']>;
     Tytul: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -686,7 +688,7 @@ export interface ApiStatutStatut extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
-    Opis: Schema.Attribute.String;
+    NazwaLinku: Schema.Attribute.String;
     Plik: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

@@ -22,6 +22,17 @@
     },
     "rank": {
       "type": "integer"
+    },
+    "Template": {
+      "type": "enumeration",
+      "enum": [
+        "Same linki",
+        "Inne"
+      ]
+    },
+    "singleTypeUid": {
+      "type": "uid",
+      "targetField": "Link"
     }
   }
 }

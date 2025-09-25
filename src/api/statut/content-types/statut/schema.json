@@ -14,7 +14,7 @@
     "Naglowek": {
       "type": "string"
     },
-    "Opis": {
+    "NazwaLinku": {
       "type": "string"
     },
     "Plik": {
