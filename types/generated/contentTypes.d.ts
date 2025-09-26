@@ -895,6 +895,31 @@ export interface ApiMenuUczenMenuUczen extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMenuMenu extends Struct.SingleTypeSchema {
+  collectionName: 'menus';
+  info: {
+    displayName: 'Menu';
+    pluralName: 'menus';
+    singularName: 'menu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Kategoria: Schema.Attribute.Component<'menu.kategoria', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::menu.menu'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPatronPatron extends Struct.SingleTypeSchema {
   collectionName: 'patrons';
   info: {
@@ -1042,6 +1067,39 @@ export interface ApiProceduryIWnioskiProceduryIWnioski
     Naglowek: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Sekcja: Schema.Attribute.Component<'domyslny.paragraf-link-obraz', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
+  collectionName: 'profiles';
+  info: {
+    displayName: 'Profile';
+    pluralName: 'profiles';
+    singularName: 'profile';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Ikona: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::material-symbols.icon'>;
+    Kolor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::profile.profile'
+    > &
+      Schema.Attribute.Private;
+    NazwaProfilu: Schema.Attribute.String;
+    Opis: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1214,6 +1272,42 @@ export interface ApiStatutStatut extends Struct.SingleTypeSchema {
     Naglowek: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Sekcja: Schema.Attribute.Component<'domyslny.paragraf-link-obraz', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStronaGlownaSzablonStronaGlownaSzablon
+  extends Struct.SingleTypeSchema {
+  collectionName: 'strona_glowna_szablons';
+  info: {
+    displayName: 'Strona G\u0142\u00F3wna - Szablon';
+    pluralName: 'strona-glowna-szablons';
+    singularName: 'strona-glowna-szablon';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Kolejnosc: Schema.Attribute.DynamicZone<
+      [
+        'home.profile',
+        'home.osiagniecia',
+        'home.krotko-o-szkole',
+        'home.aktualnosci',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::strona-glowna-szablon.strona-glowna-szablon'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2045,17 +2139,20 @@ declare module '@strapi/strapi' {
       'api::menu-dokumenty.menu-dokumenty': ApiMenuDokumentyMenuDokumenty;
       'api::menu-szkola.menu-szkola': ApiMenuSzkolaMenuSzkola;
       'api::menu-uczen.menu-uczen': ApiMenuUczenMenuUczen;
+      'api::menu.menu': ApiMenuMenu;
       'api::patron.patron': ApiPatronPatron;
       'api::podreczniki.podreczniki': ApiPodrecznikiPodreczniki;
       'api::pomoc-psychologiczno-pedagogiczna.pomoc-psychologiczno-pedagogiczna': ApiPomocPsychologicznoPedagogicznaPomocPsychologicznoPedagogiczna;
       'api::post.post': ApiPostPost;
       'api::procedury-i-wnioski.procedury-i-wnioski': ApiProceduryIWnioskiProceduryIWnioski;
+      'api::profile.profile': ApiProfileProfile;
       'api::program-wychowawczo-profilaktyczny.program-wychowawczo-profilaktyczny': ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilaktyczny;
       'api::rada-rodzicow.rada-rodzicow': ApiRadaRodzicowRadaRodzicow;
       'api::rekrutacja.rekrutacja': ApiRekrutacjaRekrutacja;
       'api::rodo.rodo': ApiRodoRodo;
       'api::samorzad.samorzad': ApiSamorzadSamorzad;
       'api::statut.statut': ApiStatutStatut;
+      'api::strona-glowna-szablon.strona-glowna-szablon': ApiStronaGlownaSzablonStronaGlownaSzablon;
       'api::stypendia.stypendia': ApiStypendiaStypendia;
       'api::wspolpraca.wspolpraca': ApiWspolpracaWspolpraca;
       'api::wymiana-z-freiburgiem.wymiana-z-freiburgiem': ApiWymianaZFreiburgiemWymianaZFreiburgiem;

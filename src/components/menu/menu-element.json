@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_menu_menu_elements",
+  "info": {
+    "displayName": "MenuElement"
+  },
+  "options": {},
+  "attributes": {
+    "Tytul": {
+      "type": "string"
+    },
+    "Opis": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "Szablon": {
+      "type": "enumeration",
+      "enum": [
+        "Automatyczny",
+        "Własny"
+      ]
+    }
+  },
+  "config": {}
+}

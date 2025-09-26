@@ -4,6 +4,7 @@ module.exports = ({ env }) => ({
       jwtSecret: env("JWT_SECRET"),
     },
   },
+  'material-symbols': true,
   prometheus: {
     enabled: true,
     config: {

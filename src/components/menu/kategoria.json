@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_menu_kategorias",
+  "info": {
+    "displayName": "Kategoria"
+  },
+  "options": {},
+  "attributes": {
+    "NazwaKategorii": {
+      "type": "string"
+    },
+    "Podstrona": {
+      "type": "component",
+      "component": "menu.menu-element",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

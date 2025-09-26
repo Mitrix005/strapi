@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NazwaProfilu": {
+      "type": "string"
+    },
+    "Opis": {
+      "type": "string"
+    },
+    "Ikona": {
+      "type": "customField",
+      "customField": "plugin::material-symbols.icon"
+    },
+    "Kolor": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    }
+  }
+}

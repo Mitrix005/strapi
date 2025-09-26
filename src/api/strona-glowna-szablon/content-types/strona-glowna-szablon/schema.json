@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "strona_glowna_szablons",
+  "info": {
+    "singularName": "strona-glowna-szablon",
+    "pluralName": "strona-glowna-szablons",
+    "displayName": "Strona Główna - Szablon"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Kolejnosc": {
+      "type": "dynamiczone",
+      "components": [
+        "home.profile",
+        "home.osiagniecia",
+        "home.krotko-o-szkole",
+        "home.aktualnosci"
+      ]
+    }
+  }
+}

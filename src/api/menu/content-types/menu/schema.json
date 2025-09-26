@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Kategoria": {
+      "type": "component",
+      "component": "menu.kategoria",
+      "repeatable": true
+    }
+  }
+}
