@@ -13,7 +13,7 @@
       "type": "string"
     },
     "IconPath": {
-      "type": "string"
+      "type": "text"
     },
     "Kolor": {
       "type": "customField",
