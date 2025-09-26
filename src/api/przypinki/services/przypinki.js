@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * profile service
+ * przypinki service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::profile.profile');
+module.exports = createCoreService('api::przypinki.przypinki');

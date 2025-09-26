@@ -1,15 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "profiles",
+  "collectionName": "components_inne_profils",
   "info": {
-    "singularName": "profile",
-    "pluralName": "profiles",
-    "displayName": "Profile"
+    "displayName": "Profil",
+    "icon": "cog"
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
     "NazwaProfilu": {
       "type": "string"
@@ -26,5 +21,6 @@
       "customField": "plugin::color-picker.color",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
     }
-  }
+  },
+  "config": {}
 }

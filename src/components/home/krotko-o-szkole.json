@@ -4,6 +4,26 @@
     "displayName": "KrotkoOSzkole"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "Podpis": {
+      "type": "string"
+    },
+    "Naglowek": {
+      "type": "string"
+    },
+    "Opis": {
+      "type": "text"
+    },
+    "Zdjecie": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
   "config": {}
 }

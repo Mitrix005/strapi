@@ -1,9 +1,15 @@
 {
   "collectionName": "components_home_profiles",
   "info": {
-    "displayName": "Profil"
+    "displayName": "Profile"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "Profile": {
+      "type": "component",
+      "component": "inne.profil",
+      "repeatable": true
+    }
+  },
   "config": {}
 }

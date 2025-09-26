@@ -610,6 +610,34 @@ export interface ApiInformatykaInformatyka extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiKadraNewKadraNew extends Struct.SingleTypeSchema {
+  collectionName: 'kadra_news';
+  info: {
+    displayName: 'Kadra - new';
+    pluralName: 'kadra-news';
+    singularName: 'kadra-new';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Kadra: Schema.Attribute.Component<'szablony.szablon-kafelki', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::kadra-new.kadra-new'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiKadraKadra extends Struct.CollectionTypeSchema {
   collectionName: 'kadras';
   info: {
@@ -1073,39 +1101,6 @@ export interface ApiProceduryIWnioskiProceduryIWnioski
   };
 }
 
-export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
-  collectionName: 'profiles';
-  info: {
-    displayName: 'Profile';
-    pluralName: 'profiles';
-    singularName: 'profile';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Ikona: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::material-symbols.icon'>;
-    Kolor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::profile.profile'
-    > &
-      Schema.Attribute.Private;
-    NazwaProfilu: Schema.Attribute.String;
-    Opis: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilaktyczny
   extends Struct.SingleTypeSchema {
   collectionName: 'program_wychowawczo_profilaktycznies';
@@ -1130,6 +1125,34 @@ export interface ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilakty
     Naglowek: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Sekcja: Schema.Attribute.Component<'domyslny.paragraf-link-obraz', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrzypinkiPrzypinki extends Struct.CollectionTypeSchema {
+  collectionName: 'przypinkis';
+  info: {
+    displayName: 'Przypinki';
+    pluralName: 'przypinkis';
+    singularName: 'przypinki';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::przypinki.przypinki'
+    > &
+      Schema.Attribute.Private;
+    NazwaPrzypinki: Schema.Attribute.Component<'inne.przypinka', true>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2131,6 +2154,7 @@ declare module '@strapi/strapi' {
       'api::erasmus.erasmus': ApiErasmusErasmus;
       'api::hymn.hymn': ApiHymnHymn;
       'api::informatyka.informatyka': ApiInformatykaInformatyka;
+      'api::kadra-new.kadra-new': ApiKadraNewKadraNew;
       'api::kadra.kadra': ApiKadraKadra;
       'api::klasy.klasy': ApiKlasyKlasy;
       'api::labolatorium-chemiczne.labolatorium-chemiczne': ApiLabolatoriumChemiczneLabolatoriumChemiczne;
@@ -2145,8 +2169,8 @@ declare module '@strapi/strapi' {
       'api::pomoc-psychologiczno-pedagogiczna.pomoc-psychologiczno-pedagogiczna': ApiPomocPsychologicznoPedagogicznaPomocPsychologicznoPedagogiczna;
       'api::post.post': ApiPostPost;
       'api::procedury-i-wnioski.procedury-i-wnioski': ApiProceduryIWnioskiProceduryIWnioski;
-      'api::profile.profile': ApiProfileProfile;
       'api::program-wychowawczo-profilaktyczny.program-wychowawczo-profilaktyczny': ApiProgramWychowawczoProfilaktycznyProgramWychowawczoProfilaktyczny;
+      'api::przypinki.przypinki': ApiPrzypinkiPrzypinki;
       'api::rada-rodzicow.rada-rodzicow': ApiRadaRodzicowRadaRodzicow;
       'api::rekrutacja.rekrutacja': ApiRekrutacjaRekrutacja;
       'api::rodo.rodo': ApiRodoRodo;

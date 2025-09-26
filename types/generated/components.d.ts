@@ -57,7 +57,12 @@ export interface HomeKrotkoOSzkole extends Struct.ComponentSchema {
   info: {
     displayName: 'KrotkoOSzkole';
   };
-  attributes: {};
+  attributes: {
+    Naglowek: Schema.Attribute.String;
+    Opis: Schema.Attribute.Text;
+    Podpis: Schema.Attribute.String;
+    Zdjecie: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
 }
 
 export interface HomeOsiagniecia extends Struct.ComponentSchema {
@@ -71,9 +76,67 @@ export interface HomeOsiagniecia extends Struct.ComponentSchema {
 export interface HomeProfile extends Struct.ComponentSchema {
   collectionName: 'components_home_profiles';
   info: {
-    displayName: 'Profil';
+    displayName: 'Profile';
   };
-  attributes: {};
+  attributes: {
+    Profile: Schema.Attribute.Component<'inne.profil', true>;
+  };
+}
+
+export interface InneKafelek extends Struct.ComponentSchema {
+  collectionName: 'components_inne_kafeleks';
+  info: {
+    displayName: 'Kafelek';
+    icon: 'apps';
+  };
+  attributes: {
+    Opis: Schema.Attribute.String;
+    przypinkis: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::przypinki.przypinki'
+    >;
+    Tytul: Schema.Attribute.String;
+  };
+}
+
+export interface InneProfil extends Struct.ComponentSchema {
+  collectionName: 'components_inne_profils';
+  info: {
+    displayName: 'Profil';
+    icon: 'cog';
+  };
+  attributes: {
+    Ikona: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::material-symbols.icon'>;
+    Kolor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    NazwaProfilu: Schema.Attribute.String;
+    Opis: Schema.Attribute.String;
+  };
+}
+
+export interface InnePrzypinka extends Struct.ComponentSchema {
+  collectionName: 'components_inne_przypinkas';
+  info: {
+    displayName: 'Przypinka';
+    icon: 'cursor';
+  };
+  attributes: {
+    Funkcja: Schema.Attribute.String;
+    Kolor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface InneSekcjaKafelek extends Struct.ComponentSchema {
+  collectionName: 'components_inne_sekcja_kafeleks';
+  info: {
+    displayName: 'SekcjaKafelek';
+  };
+  attributes: {
+    Kafeleki: Schema.Attribute.Component<'inne.kafelek', true>;
+    Naglowek: Schema.Attribute.String;
+  };
 }
 
 export interface MenuKategoria extends Struct.ComponentSchema {
@@ -96,8 +159,20 @@ export interface MenuMenuElement extends Struct.ComponentSchema {
     Link: Schema.Attribute.String;
     Opis: Schema.Attribute.String;
     rank: Schema.Attribute.Integer;
-    Szablon: Schema.Attribute.Enumeration<['Automatyczny', 'W\u0142asny']>;
+    Szablon: Schema.Attribute.Enumeration<
+      ['Automatyczny', 'Kafelki', 'W\u0142asny']
+    >;
     Tytul: Schema.Attribute.String;
+  };
+}
+
+export interface SzablonySzablonKafelki extends Struct.ComponentSchema {
+  collectionName: 'components_szablony_szablon_kafelkis';
+  info: {
+    displayName: 'Szablon - Kafelki';
+  };
+  attributes: {
+    Szablon: Schema.Attribute.Component<'inne.sekcja-kafelek', true>;
   };
 }
 
@@ -111,8 +186,13 @@ declare module '@strapi/strapi' {
       'home.krotko-o-szkole': HomeKrotkoOSzkole;
       'home.osiagniecia': HomeOsiagniecia;
       'home.profile': HomeProfile;
+      'inne.kafelek': InneKafelek;
+      'inne.profil': InneProfil;
+      'inne.przypinka': InnePrzypinka;
+      'inne.sekcja-kafelek': InneSekcjaKafelek;
       'menu.kategoria': MenuKategoria;
       'menu.menu-element': MenuMenuElement;
+      'szablony.szablon-kafelki': SzablonySzablonKafelki;
     }
   }
 }

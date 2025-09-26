@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_inne_kafeleks",
+  "info": {
+    "displayName": "Kafelek",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Tytul": {
+      "type": "string"
+    },
+    "Opis": {
+      "type": "string"
+    },
+    "przypinkis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::przypinki.przypinki"
+    }
+  },
+  "config": {}
+}

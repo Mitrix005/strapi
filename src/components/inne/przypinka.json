@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_inne_przypinkas",
+  "info": {
+    "displayName": "Przypinka",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "Funkcja": {
+      "type": "string"
+    },
+    "Kolor": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    }
+  },
+  "config": {}
+}

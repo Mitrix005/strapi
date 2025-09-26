@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_inne_sekcja_kafeleks",
+  "info": {
+    "displayName": "SekcjaKafelek"
+  },
+  "options": {},
+  "attributes": {
+    "Naglowek": {
+      "type": "string"
+    },
+    "Kafeleki": {
+      "type": "component",
+      "component": "inne.kafelek",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "przypinkis",
+  "info": {
+    "singularName": "przypinki",
+    "pluralName": "przypinkis",
+    "displayName": "Przypinki"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NazwaPrzypinki": {
+      "type": "component",
+      "component": "inne.przypinka",
+      "repeatable": true
+    }
+  }
+}

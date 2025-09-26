@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_szablony_szablon_kafelkis",
+  "info": {
+    "displayName": "Szablon - Kafelki"
+  },
+  "options": {},
+  "attributes": {
+    "Szablon": {
+      "type": "component",
+      "component": "inne.sekcja-kafelek",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
