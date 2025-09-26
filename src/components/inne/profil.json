@@ -12,9 +12,8 @@
     "Opis": {
       "type": "string"
     },
-    "Ikona": {
-      "type": "customField",
-      "customField": "plugin::material-symbols.icon"
+    "IconPath": {
+      "type": "string"
     },
     "Kolor": {
       "type": "customField",

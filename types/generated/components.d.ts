@@ -106,8 +106,7 @@ export interface InneProfil extends Struct.ComponentSchema {
     icon: 'cog';
   };
   attributes: {
-    Ikona: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::material-symbols.icon'>;
+    IconPath: Schema.Attribute.String;
     Kolor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     NazwaProfilu: Schema.Attribute.String;
