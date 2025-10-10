@@ -12,7 +12,7 @@
     "Opis": {
       "type": "string"
     },
-    "przypinkis": {
+    "przypinki": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::przypinki.przypinki"

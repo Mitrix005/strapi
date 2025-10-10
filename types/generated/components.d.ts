@@ -91,7 +91,7 @@ export interface InneKafelek extends Struct.ComponentSchema {
   };
   attributes: {
     Opis: Schema.Attribute.String;
-    przypinkis: Schema.Attribute.Relation<
+    przypinki: Schema.Attribute.Relation<
       'oneToMany',
       'api::przypinki.przypinki'
     >;

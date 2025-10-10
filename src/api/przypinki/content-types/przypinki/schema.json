@@ -12,7 +12,9 @@
   "pluginOptions": {},
   "attributes": {
     "Funkcja": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "Kolor": {
       "type": "customField",

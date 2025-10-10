@@ -1011,7 +1011,9 @@ export interface ApiPrzypinkiPrzypinki extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Funkcja: Schema.Attribute.String;
+    Funkcja: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     Kolor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
