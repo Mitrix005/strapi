@@ -789,140 +789,6 @@ export interface ApiMaturzystaMaturzysta extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiMenuAktualnosciMenuAktualnosci
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'menu_aktualnoscis';
-  info: {
-    displayName: 'Menu - Aktualno\u015Bci';
-    pluralName: 'menu-aktualnoscis';
-    singularName: 'menu-aktualnosci';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Link: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::menu-aktualnosci.menu-aktualnosci'
-    > &
-      Schema.Attribute.Private;
-    Opis: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    rank: Schema.Attribute.Integer;
-    singleTypeUid: Schema.Attribute.UID<'Link'>;
-    Template: Schema.Attribute.Enumeration<['Main', 'Same linki']>;
-    Tytul: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiMenuDokumentyMenuDokumenty
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'menu_dokumenties';
-  info: {
-    displayName: 'Menu - Dokumenty';
-    pluralName: 'menu-dokumenties';
-    singularName: 'menu-dokumenty';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Link: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::menu-dokumenty.menu-dokumenty'
-    > &
-      Schema.Attribute.Private;
-    Opis: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    rank: Schema.Attribute.Integer;
-    singleTypeUid: Schema.Attribute.UID<'Link'>;
-    Template: Schema.Attribute.Enumeration<['Same linki', 'Inne']>;
-    Tytul: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiMenuSzkolaMenuSzkola extends Struct.CollectionTypeSchema {
-  collectionName: 'menu_szkolas';
-  info: {
-    displayName: 'Menu - Szko\u0142a';
-    pluralName: 'menu-szkolas';
-    singularName: 'menu-szkola';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Link: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::menu-szkola.menu-szkola'
-    > &
-      Schema.Attribute.Private;
-    Opis: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    rank: Schema.Attribute.Integer;
-    singleTypeUid: Schema.Attribute.UID<'Link'>;
-    Template: Schema.Attribute.Enumeration<['Main', 'Same linki']>;
-    Tytul: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiMenuUczenMenuUczen extends Struct.CollectionTypeSchema {
-  collectionName: 'menu_uczens';
-  info: {
-    displayName: 'Menu - Ucze\u0144';
-    pluralName: 'menu-uczens';
-    singularName: 'menu-uczen';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Link: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::menu-uczen.menu-uczen'
-    > &
-      Schema.Attribute.Private;
-    Opis: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    rank: Schema.Attribute.Integer;
-    singleTypeUid: Schema.Attribute.UID<'Link'>;
-    Template: Schema.Attribute.Enumeration<['Main', 'Post']>;
-    Tytul: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiMenuMenu extends Struct.SingleTypeSchema {
   collectionName: 'menus';
   info: {
@@ -1145,13 +1011,15 @@ export interface ApiPrzypinkiPrzypinki extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Funkcja: Schema.Attribute.String;
+    Kolor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::przypinki.przypinki'
     > &
       Schema.Attribute.Private;
-    NazwaPrzypinki: Schema.Attribute.Component<'inne.przypinka', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2159,10 +2027,6 @@ declare module '@strapi/strapi' {
       'api::klasy.klasy': ApiKlasyKlasy;
       'api::labolatorium-chemiczne.labolatorium-chemiczne': ApiLabolatoriumChemiczneLabolatoriumChemiczne;
       'api::maturzysta.maturzysta': ApiMaturzystaMaturzysta;
-      'api::menu-aktualnosci.menu-aktualnosci': ApiMenuAktualnosciMenuAktualnosci;
-      'api::menu-dokumenty.menu-dokumenty': ApiMenuDokumentyMenuDokumenty;
-      'api::menu-szkola.menu-szkola': ApiMenuSzkolaMenuSzkola;
-      'api::menu-uczen.menu-uczen': ApiMenuUczenMenuUczen;
       'api::menu.menu': ApiMenuMenu;
       'api::patron.patron': ApiPatronPatron;
       'api::podreczniki.podreczniki': ApiPodrecznikiPodreczniki;

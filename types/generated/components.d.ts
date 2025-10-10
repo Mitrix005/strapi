@@ -114,19 +114,6 @@ export interface InneProfil extends Struct.ComponentSchema {
   };
 }
 
-export interface InnePrzypinka extends Struct.ComponentSchema {
-  collectionName: 'components_inne_przypinkas';
-  info: {
-    displayName: 'Przypinka';
-    icon: 'cursor';
-  };
-  attributes: {
-    Funkcja: Schema.Attribute.String;
-    Kolor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-  };
-}
-
 export interface InneSekcjaKafelek extends Struct.ComponentSchema {
   collectionName: 'components_inne_sekcja_kafeleks';
   info: {
@@ -187,7 +174,6 @@ declare module '@strapi/strapi' {
       'home.profile': HomeProfile;
       'inne.kafelek': InneKafelek;
       'inne.profil': InneProfil;
-      'inne.przypinka': InnePrzypinka;
       'inne.sekcja-kafelek': InneSekcjaKafelek;
       'menu.kategoria': MenuKategoria;
       'menu.menu-element': MenuMenuElement;
