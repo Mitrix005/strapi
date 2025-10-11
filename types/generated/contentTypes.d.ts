@@ -734,7 +734,7 @@ export interface ApiLabolatoriumChemiczneLabolatoriumChemiczne
   extends Struct.SingleTypeSchema {
   collectionName: 'labolatorium_chemicznes';
   info: {
-    displayName: 'Labolatorium chemiczne';
+    displayName: 'Laboratorium chemiczne';
     pluralName: 'labolatorium-chemicznes';
     singularName: 'labolatorium-chemiczne';
   };
