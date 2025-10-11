@@ -20,7 +20,7 @@ export interface BannerPrzycisk extends Struct.ComponentSchema {
     icon: 'check';
   };
   attributes: {
-    IconPath: Schema.Attribute.String;
+    IconPath: Schema.Attribute.Text;
     Link: Schema.Attribute.String;
     Nazwa: Schema.Attribute.String;
   };
