@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Tytul": {
+    "ImieNazwisko": {
       "type": "string"
     },
     "Opis": {

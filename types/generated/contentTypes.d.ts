@@ -1016,6 +1016,8 @@ export interface ApiPrzypinkiPrzypinki extends Struct.CollectionTypeSchema {
       Schema.Attribute.Unique;
     Kolor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    KolorTekstu: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

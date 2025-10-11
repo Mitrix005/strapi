@@ -116,12 +116,12 @@ export interface InneKafelek extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
+    ImieNazwisko: Schema.Attribute.String;
     Opis: Schema.Attribute.String;
     przypinki: Schema.Attribute.Relation<
       'oneToMany',
       'api::przypinki.przypinki'
     >;
-    Tytul: Schema.Attribute.String;
   };
 }
 
@@ -196,6 +196,7 @@ export interface SzablonySzablonKafelki extends Struct.ComponentSchema {
   };
   attributes: {
     Szablon: Schema.Attribute.Component<'inne.sekcja-kafelek', true>;
+    Tytul: Schema.Attribute.String;
   };
 }
 

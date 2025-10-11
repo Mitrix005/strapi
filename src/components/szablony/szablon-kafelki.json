@@ -5,6 +5,9 @@
   },
   "options": {},
   "attributes": {
+    "Tytul": {
+      "type": "string"
+    },
     "Szablon": {
       "type": "component",
       "component": "inne.sekcja-kafelek",
