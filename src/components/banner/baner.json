@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_banner_baners",
+  "info": {
+    "displayName": "Baner"
+  },
+  "options": {},
+  "attributes": {
+    "ZdjecieBaner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Przyciski": {
+      "type": "component",
+      "component": "banner.przycisk",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

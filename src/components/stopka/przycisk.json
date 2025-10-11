@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_stopka_przycisks",
+  "info": {
+    "displayName": "Przycisk"
+  },
+  "options": {},
+  "attributes": {
+    "Nazwa": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

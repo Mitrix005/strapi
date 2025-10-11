@@ -1,5 +1,31 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BannerBaner extends Struct.ComponentSchema {
+  collectionName: 'components_banner_baners';
+  info: {
+    displayName: 'Baner';
+  };
+  attributes: {
+    Przyciski: Schema.Attribute.Component<'banner.przycisk', true>;
+    ZdjecieBaner: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
+export interface BannerPrzycisk extends Struct.ComponentSchema {
+  collectionName: 'components_banner_przycisks';
+  info: {
+    displayName: 'Przycisk';
+    icon: 'check';
+  };
+  attributes: {
+    IconPath: Schema.Attribute.String;
+    Link: Schema.Attribute.String;
+    Nazwa: Schema.Attribute.String;
+  };
+}
+
 export interface DomyslnyLink extends Struct.ComponentSchema {
   collectionName: 'components_domyslny_links';
   info: {
@@ -152,6 +178,17 @@ export interface MenuMenuElement extends Struct.ComponentSchema {
   };
 }
 
+export interface StopkaPrzycisk extends Struct.ComponentSchema {
+  collectionName: 'components_stopka_przycisks';
+  info: {
+    displayName: 'Przycisk';
+  };
+  attributes: {
+    Link: Schema.Attribute.String;
+    Nazwa: Schema.Attribute.String;
+  };
+}
+
 export interface SzablonySzablonKafelki extends Struct.ComponentSchema {
   collectionName: 'components_szablony_szablon_kafelkis';
   info: {
@@ -165,6 +202,8 @@ export interface SzablonySzablonKafelki extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'banner.baner': BannerBaner;
+      'banner.przycisk': BannerPrzycisk;
       'domyslny.link': DomyslnyLink;
       'domyslny.paragraf': DomyslnyParagraf;
       'domyslny.paragraf-link-obraz': DomyslnyParagrafLinkObraz;
@@ -177,6 +216,7 @@ declare module '@strapi/strapi' {
       'inne.sekcja-kafelek': InneSekcjaKafelek;
       'menu.kategoria': MenuKategoria;
       'menu.menu-element': MenuMenuElement;
+      'stopka.przycisk': StopkaPrzycisk;
       'szablony.szablon-kafelki': SzablonySzablonKafelki;
     }
   }

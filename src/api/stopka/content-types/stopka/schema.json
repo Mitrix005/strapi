@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "stopkas",
+  "info": {
+    "singularName": "stopka",
+    "pluralName": "stopkas",
+    "displayName": "Stopka"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Przyciski": {
+      "type": "component",
+      "component": "stopka.przycisk",
+      "repeatable": true
+    },
+    "Facebook": {
+      "type": "string"
+    },
+    "Tiktok": {
+      "type": "string"
+    },
+    "Telefon": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "Adres": {
+      "type": "string"
+    }
+  }
+}

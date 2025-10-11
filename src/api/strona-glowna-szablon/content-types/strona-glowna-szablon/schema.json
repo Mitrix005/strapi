@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "Baner": {
+      "type": "component",
+      "component": "banner.baner",
+      "repeatable": false
+    },
     "Kolejnosc": {
       "type": "dynamiczone",
       "components": [

@@ -1171,6 +1171,39 @@ export interface ApiStatutStatut extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiStopkaStopka extends Struct.SingleTypeSchema {
+  collectionName: 'stopkas';
+  info: {
+    displayName: 'Stopka';
+    pluralName: 'stopkas';
+    singularName: 'stopka';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Adres: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.String;
+    Facebook: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stopka.stopka'
+    > &
+      Schema.Attribute.Private;
+    Przyciski: Schema.Attribute.Component<'stopka.przycisk', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    Telefon: Schema.Attribute.String;
+    Tiktok: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStronaGlownaSzablonStronaGlownaSzablon
   extends Struct.SingleTypeSchema {
   collectionName: 'strona_glowna_szablons';
@@ -1183,6 +1216,7 @@ export interface ApiStronaGlownaSzablonStronaGlownaSzablon
     draftAndPublish: true;
   };
   attributes: {
+    Baner: Schema.Attribute.Component<'banner.baner', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2042,6 +2076,7 @@ declare module '@strapi/strapi' {
       'api::rodo.rodo': ApiRodoRodo;
       'api::samorzad.samorzad': ApiSamorzadSamorzad;
       'api::statut.statut': ApiStatutStatut;
+      'api::stopka.stopka': ApiStopkaStopka;
       'api::strona-glowna-szablon.strona-glowna-szablon': ApiStronaGlownaSzablonStronaGlownaSzablon;
       'api::stypendia.stypendia': ApiStypendiaStypendia;
       'api::wspolpraca.wspolpraca': ApiWspolpracaWspolpraca;
