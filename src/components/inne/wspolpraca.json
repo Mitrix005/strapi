@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_inne_wspolpracas",
+  "info": {
+    "displayName": "Wspolpraca"
+  },
+  "options": {},
+  "attributes": {
+    "Zdjecie": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

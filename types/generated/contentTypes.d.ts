@@ -610,34 +610,6 @@ export interface ApiInformatykaInformatyka extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiKadraNewKadraNew extends Struct.SingleTypeSchema {
-  collectionName: 'kadra_news';
-  info: {
-    displayName: 'Kadra - new';
-    pluralName: 'kadra-news';
-    singularName: 'kadra-new';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Kadra: Schema.Attribute.Component<'szablony.szablon-kafelki', false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::kadra-new.kadra-new'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiKadraKadra extends Struct.CollectionTypeSchema {
   collectionName: 'kadras';
   info: {
@@ -1907,7 +1879,6 @@ declare module '@strapi/strapi' {
       'api::erasmus.erasmus': ApiErasmusErasmus;
       'api::hymn.hymn': ApiHymnHymn;
       'api::informatyka.informatyka': ApiInformatykaInformatyka;
-      'api::kadra-new.kadra-new': ApiKadraNewKadraNew;
       'api::kadra.kadra': ApiKadraKadra;
       'api::klasy.klasy': ApiKlasyKlasy;
       'api::labolatorium-chemiczne.labolatorium-chemiczne': ApiLabolatoriumChemiczneLabolatoriumChemiczne;

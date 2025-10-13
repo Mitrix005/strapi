@@ -96,7 +96,10 @@ export interface HomeOsiagniecia extends Struct.ComponentSchema {
   info: {
     displayName: 'Osiagniecia';
   };
-  attributes: {};
+  attributes: {
+    Tarcze: Schema.Attribute.Component<'inne.tarcza', true>;
+    Wspolprace: Schema.Attribute.Component<'inne.wspolpraca', true>;
+  };
 }
 
 export interface HomeProfile extends Struct.ComponentSchema {
@@ -148,6 +151,26 @@ export interface InneSekcjaKafelek extends Struct.ComponentSchema {
   attributes: {
     Kafeleki: Schema.Attribute.Component<'inne.kafelek', true>;
     Naglowek: Schema.Attribute.String;
+  };
+}
+
+export interface InneTarcza extends Struct.ComponentSchema {
+  collectionName: 'components_inne_tarczas';
+  info: {
+    displayName: 'Tarcza';
+  };
+  attributes: {
+    Zdjecie: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface InneWspolpraca extends Struct.ComponentSchema {
+  collectionName: 'components_inne_wspolpracas';
+  info: {
+    displayName: 'Wspolpraca';
+  };
+  attributes: {
+    Zdjecie: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -215,6 +238,8 @@ declare module '@strapi/strapi' {
       'inne.kafelek': InneKafelek;
       'inne.profil': InneProfil;
       'inne.sekcja-kafelek': InneSekcjaKafelek;
+      'inne.tarcza': InneTarcza;
+      'inne.wspolpraca': InneWspolpraca;
       'menu.kategoria': MenuKategoria;
       'menu.menu-element': MenuMenuElement;
       'stopka.przycisk': StopkaPrzycisk;

@@ -4,6 +4,17 @@
     "displayName": "Osiagniecia"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "Tarcze": {
+      "type": "component",
+      "component": "inne.tarcza",
+      "repeatable": true
+    },
+    "Wspolprace": {
+      "type": "component",
+      "component": "inne.wspolpraca",
+      "repeatable": true
+    }
+  },
   "config": {}
 }
