@@ -20,7 +20,7 @@
     "Autor": {
       "type": "string"
     },
-    "ZdjecieProfile": {
+    "ZdjecieGlowne": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

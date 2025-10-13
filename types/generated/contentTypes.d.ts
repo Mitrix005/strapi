@@ -931,7 +931,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    ZdjecieProfile: Schema.Attribute.Media<
+    ZdjecieGlowne: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
   };
