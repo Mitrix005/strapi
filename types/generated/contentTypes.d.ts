@@ -419,13 +419,14 @@ export interface ApiArchiwumDyrekcjaArchiwumDyrekcja
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ImieNazwisko: Schema.Attribute.String & Schema.Attribute.Required;
+    Koniec: Schema.Attribute.Date & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::archiwum-dyrekcja.archiwum-dyrekcja'
     > &
       Schema.Attribute.Private;
-    OkresKadencji: Schema.Attribute.Component<'inne.okres-kadencji', true>;
+    Poczatek: Schema.Attribute.Date & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

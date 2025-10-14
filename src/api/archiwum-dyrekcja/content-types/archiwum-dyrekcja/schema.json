@@ -26,10 +26,13 @@
         "audios"
       ]
     },
-    "OkresKadencji": {
-      "type": "component",
-      "component": "inne.okres-kadencji",
-      "repeatable": true
+    "Poczatek": {
+      "type": "date",
+      "required": true
+    },
+    "Koniec": {
+      "type": "date",
+      "required": true
     }
   }
 }
