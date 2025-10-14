@@ -1,9 +1,9 @@
 {
   "kind": "singleType",
-  "collectionName": "labolatorium_chemicznes",
+  "collectionName": "laboratorium_chemicznes",
   "info": {
-    "singularName": "labolatorium-chemiczne",
-    "pluralName": "labolatorium-chemicznes",
+    "singularName": "laboratorium-chemiczne",
+    "pluralName": "laboratorium-chemicznes",
     "displayName": "Laboratorium chemiczne"
   },
   "options": {

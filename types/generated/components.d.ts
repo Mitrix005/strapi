@@ -128,6 +128,17 @@ export interface InneKafelek extends Struct.ComponentSchema {
   };
 }
 
+export interface InneOkresKadencji extends Struct.ComponentSchema {
+  collectionName: 'components_inne_okres_kadencjis';
+  info: {
+    displayName: 'OkresKadencji';
+  };
+  attributes: {
+    Koniec: Schema.Attribute.Date;
+    Poczatek: Schema.Attribute.Date;
+  };
+}
+
 export interface InneProfil extends Struct.ComponentSchema {
   collectionName: 'components_inne_profils';
   info: {
@@ -236,6 +247,7 @@ declare module '@strapi/strapi' {
       'home.osiagniecia': HomeOsiagniecia;
       'home.profile': HomeProfile;
       'inne.kafelek': InneKafelek;
+      'inne.okres-kadencji': InneOkresKadencji;
       'inne.profil': InneProfil;
       'inne.sekcja-kafelek': InneSekcjaKafelek;
       'inne.tarcza': InneTarcza;

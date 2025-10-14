@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_inne_okres_kadencjis",
+  "info": {
+    "displayName": "OkresKadencji"
+  },
+  "options": {},
+  "attributes": {
+    "Poczatek": {
+      "type": "date"
+    },
+    "Koniec": {
+      "type": "date"
+    }
+  },
+  "config": {}
+}

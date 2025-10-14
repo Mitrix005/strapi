@@ -419,14 +419,13 @@ export interface ApiArchiwumDyrekcjaArchiwumDyrekcja
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ImieNazwisko: Schema.Attribute.String & Schema.Attribute.Required;
-    Koniec: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::archiwum-dyrekcja.archiwum-dyrekcja'
     > &
       Schema.Attribute.Private;
-    Poczatek: Schema.Attribute.Date & Schema.Attribute.Required;
+    OkresKadencji: Schema.Attribute.Component<'inne.okres-kadencji', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -702,13 +701,13 @@ export interface ApiKlasyKlasy extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiLabolatoriumChemiczneLabolatoriumChemiczne
+export interface ApiLaboratoriumChemiczneLaboratoriumChemiczne
   extends Struct.SingleTypeSchema {
-  collectionName: 'labolatorium_chemicznes';
+  collectionName: 'laboratorium_chemicznes';
   info: {
     displayName: 'Laboratorium chemiczne';
-    pluralName: 'labolatorium-chemicznes';
-    singularName: 'labolatorium-chemiczne';
+    pluralName: 'laboratorium-chemicznes';
+    singularName: 'laboratorium-chemiczne';
   };
   options: {
     draftAndPublish: true;
@@ -720,7 +719,7 @@ export interface ApiLabolatoriumChemiczneLabolatoriumChemiczne
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::labolatorium-chemiczne.labolatorium-chemiczne'
+      'api::laboratorium-chemiczne.laboratorium-chemiczne'
     > &
       Schema.Attribute.Private;
     Naglowek: Schema.Attribute.String;
@@ -1881,7 +1880,7 @@ declare module '@strapi/strapi' {
       'api::informatyka.informatyka': ApiInformatykaInformatyka;
       'api::kadra.kadra': ApiKadraKadra;
       'api::klasy.klasy': ApiKlasyKlasy;
-      'api::labolatorium-chemiczne.labolatorium-chemiczne': ApiLabolatoriumChemiczneLabolatoriumChemiczne;
+      'api::laboratorium-chemiczne.laboratorium-chemiczne': ApiLaboratoriumChemiczneLaboratoriumChemiczne;
       'api::maturzysta.maturzysta': ApiMaturzystaMaturzysta;
       'api::menu.menu': ApiMenuMenu;
       'api::patron.patron': ApiPatronPatron;
