@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_galeria_wydarzenies",
+  "info": {
+    "displayName": "Wydarzenie"
+  },
+  "options": {},
+  "attributes": {
+    "TytulWydarzenia": {
+      "type": "string",
+      "required": true
+    },
+    "Zdjecia": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_galeria_zakladkas",
+  "info": {
+    "displayName": "Zakladka"
+  },
+  "options": {},
+  "attributes": {
+    "Tytul": {
+      "type": "string"
+    },
+    "Wydarzenia": {
+      "type": "component",
+      "component": "galeria.wydarzenie",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

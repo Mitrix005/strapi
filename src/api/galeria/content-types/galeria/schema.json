@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "galerias",
+  "info": {
+    "singularName": "galeria",
+    "pluralName": "galerias",
+    "displayName": "Galeria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Zakladki": {
+      "type": "component",
+      "component": "galeria.zakladka",
+      "repeatable": true
+    }
+  }
+}

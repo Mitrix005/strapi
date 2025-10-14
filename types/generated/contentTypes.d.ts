@@ -555,6 +555,34 @@ export interface ApiErasmusErasmus extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGaleriaGaleria extends Struct.SingleTypeSchema {
+  collectionName: 'galerias';
+  info: {
+    displayName: 'Galeria';
+    pluralName: 'galerias';
+    singularName: 'galeria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::galeria.galeria'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Zakladki: Schema.Attribute.Component<'galeria.zakladka', true>;
+  };
+}
+
 export interface ApiHymnHymn extends Struct.SingleTypeSchema {
   collectionName: 'hymns';
   info: {
@@ -1877,6 +1905,7 @@ declare module '@strapi/strapi' {
       'api::certyfikaty.certyfikaty': ApiCertyfikatyCertyfikaty;
       'api::deklaracja-dostepnosci.deklaracja-dostepnosci': ApiDeklaracjaDostepnosciDeklaracjaDostepnosci;
       'api::erasmus.erasmus': ApiErasmusErasmus;
+      'api::galeria.galeria': ApiGaleriaGaleria;
       'api::hymn.hymn': ApiHymnHymn;
       'api::informatyka.informatyka': ApiInformatykaInformatyka;
       'api::kadra.kadra': ApiKadraKadra;

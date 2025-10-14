@@ -70,6 +70,31 @@ export interface DomyslnyParagrafLinkObraz extends Struct.ComponentSchema {
   };
 }
 
+export interface GaleriaWydarzenie extends Struct.ComponentSchema {
+  collectionName: 'components_galeria_wydarzenies';
+  info: {
+    displayName: 'Wydarzenie';
+  };
+  attributes: {
+    TytulWydarzenia: Schema.Attribute.String & Schema.Attribute.Required;
+    Zdjecia: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface GaleriaZakladka extends Struct.ComponentSchema {
+  collectionName: 'components_galeria_zakladkas';
+  info: {
+    displayName: 'Zakladka';
+  };
+  attributes: {
+    Tytul: Schema.Attribute.String;
+    Wydarzenia: Schema.Attribute.Component<'galeria.wydarzenie', true>;
+  };
+}
+
 export interface HomeAktualnosci extends Struct.ComponentSchema {
   collectionName: 'components_home_aktualnoscis';
   info: {
@@ -242,6 +267,8 @@ declare module '@strapi/strapi' {
       'domyslny.link': DomyslnyLink;
       'domyslny.paragraf': DomyslnyParagraf;
       'domyslny.paragraf-link-obraz': DomyslnyParagrafLinkObraz;
+      'galeria.wydarzenie': GaleriaWydarzenie;
+      'galeria.zakladka': GaleriaZakladka;
       'home.aktualnosci': HomeAktualnosci;
       'home.krotko-o-szkole': HomeKrotkoOSzkole;
       'home.osiagniecia': HomeOsiagniecia;
