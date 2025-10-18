@@ -26,6 +26,8 @@ export default {
         "Auth.form.welcome.title": "Panel Administracyjny",
         "Content Manager": "Menedżer treści",
         "Content Type Builder": "Kreator typów treści",
+        "HomePage.header.title": "Witaj {name}",
+        "HomePage.header.subtitle": "Witaj w Panelu Administracyjnym 1LO",
       },
       en: {
         "Auth.form.welcome.title": "Panel Administracyjny"
