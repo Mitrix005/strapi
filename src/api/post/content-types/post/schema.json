@@ -15,7 +15,11 @@
       "type": "string"
     },
     "Opis": {
-      "type": "text"
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "Autor": {
       "type": "string"
