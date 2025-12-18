@@ -12,7 +12,7 @@
   "pluginOptions": {},
   "attributes": {
     "Tytul": {
-      "type": "string"
+      "type": "text"
     },
     "Opis": {
       "type": "customField",
